@@ -1,0 +1,15 @@
+import junit.framework.TestCase;
+
+
+public class testTest extends TestCase {
+	
+	public void testcases()
+	{
+		test t1 = new test();
+		
+		String message1 = t1.messageTest();
+		
+		assertEquals("Hello world", message1);
+	}
+
+}

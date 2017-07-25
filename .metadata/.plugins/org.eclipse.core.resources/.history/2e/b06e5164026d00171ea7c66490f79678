@@ -1,0 +1,70 @@
+import java.io.FileReader;
+import java.net.ServerSocket;
+
+
+class Server implements Runnable {
+
+	private String threadName =  "";
+	private String fileName =  "";
+	private Thread thread;
+	
+	
+	public Server(String name, String fname)
+	{
+		threadName = name;
+		fileName = fname;
+	}
+	
+	public void run()
+	{
+		
+		String message = "";
+		FileReader in = null;
+		try
+		{
+			in = new FileReader(fileName + ".txt");
+			
+			System.out.println(fileName);
+
+			int d = in.read();
+			
+			
+			while(d!= -1)
+			{
+				message += (char)d;
+				d = in.read();
+				
+				System.out.println(threadName +"..........."+ message);
+				
+				thread.sleep(500);
+			}
+			
+			
+		}
+
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
+	}
+
+	public void start()
+	{
+		System.out.println("Start thread ........" + threadName);
+		if(thread == null)
+		{
+			thread = new Thread(this,threadName);
+			thread.start();
+		}
+	}
+		
+}
+
+public class ServerThread
+{
+	public static void main(String args[])
+	{
+		ServerSocket socket = new ServerSocket(6666);
+	}
+}

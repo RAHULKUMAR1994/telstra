@@ -1,0 +1,55 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class sample implements Runnable{
+
+	private String threadName;
+	private Thread thread;
+	private String fileName;
+
+
+	public sample(String name, String fname)
+	{
+		threadName = name; 
+		fileName = fname;
+	}
+
+
+	public void run()
+	{
+		
+		String message = "";
+		FileReader in = null;
+		try
+		{
+			in = new FileReader(fileName + ".txt");
+
+			int d = in.read();
+
+			while(d!= -1)
+			{
+				message += (char)d;
+			}
+			
+			System.out.println(message);
+		}
+
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
+	}
+
+	public void start()
+	{
+		System.out.println("Start thread ........" + threadName);
+		if(thread == null)
+		{
+			thread = new Thread(this,threadName);
+		}
+	}
+
+}

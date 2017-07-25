@@ -1,0 +1,55 @@
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
+
+
+public class NioJava {
+	
+	public static void main(String ar[])
+	{
+		
+	}
+	
+	public String getMessage() throws IOException
+	{
+		String message = "";
+		RandomAccessFile f = new RandomAccessFile("C:\\Users\\rahulkumar.254927\\workspace\\sampleproject\\src\\in.txt","rw");
+		FileChannel inC = f.getChannel();
+		
+		
+	    ByteBuffer buf = ByteBuffer.allocate(48);
+
+	    int bytesRead = inC.read(buf);
+	    while (bytesRead != -1) {
+
+	     // System.out.println("Read " + bytesRead);
+	      buf.flip();
+
+	      while(buf.hasRemaining()){
+	    	  message += (char) buf.get();
+	          
+	      }
+	     // System.out.print(message);
+	      buf.clear();
+	      bytesRead = inC.read(buf);
+	    }
+	    f.close();
+		return message;
+		
+		
+	}
+	
+
+		
+}
+
+
+
+
+
+
+
+
+

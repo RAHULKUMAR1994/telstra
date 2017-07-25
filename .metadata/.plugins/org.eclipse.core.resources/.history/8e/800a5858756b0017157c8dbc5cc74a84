@@ -1,0 +1,40 @@
+import java.io.*;
+
+public class test
+{
+	public static String message = "";
+	
+	public static void main(String args[]) throws FileNotFoundException
+	{
+		System.out.println("hello");
+			
+		String f = "C:\\Users\\rahulkumar.254927\\workspace\\sampleproject\\src\\in.txt";
+		String res = "";
+		try
+		{
+			FileReader read1 = new FileReader(f);
+			
+			int d = read1.read();
+			
+			System.out.println(d);
+			
+			res += Character.toString((char)d);
+			
+			while(d != -1)
+			{
+				System.out.println(d);
+				d = read1.read();
+				res += Character.toString((char)d);
+			}
+			
+			System.out.println(res);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);	
+		}
+		
+		message = res;
+	
+	}
+}

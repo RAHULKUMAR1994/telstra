@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class test
+{
+	public static void main(String args[]) throws FileNotFoundException
+	{
+		System.out.println("hello");
+			
+		String f = "in.txt";
+		
+		try
+		{
+			FileReader read1 = new FileReader(f);
+			
+			//String d = read1.read();
+			
+			System.out.println(read1);
+			
+			//while()
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);	
+		}
+		
+	
+	}
+}

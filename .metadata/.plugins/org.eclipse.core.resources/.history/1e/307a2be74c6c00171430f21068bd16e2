@@ -1,0 +1,50 @@
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.util.Set;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+
+
+public class niononblockingserver {
+	
+	public static void main(String args[]) throws IOException
+	{
+		ServerSocketChannel channel = ServerSocketChannel.open(); 
+		Selector se = Selector.open();
+		
+		
+		InetSocketAddress address = new InetSocketAddress("localhost",2222);
+		
+		channel.bind(address) ;
+		channel.configureBlocking(false);
+		
+		
+		int keys = channel.validOps();
+		
+		SelectionKey avaKeys = channel.register(se, keys);
+		
+		while(true)
+		{
+			se.select();
+			
+			Set<SelectionKey> set = se.selectedKeys();
+			
+			Iterator<SelectionKey> iter = set.iterator();
+			
+			
+			
+			
+			
+			
+			if()
+		}
+		
+		
+		
+	}
+	
+}

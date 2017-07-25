@@ -1,0 +1,90 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+class Server implements Runnable {
+
+	private String threadName =  "";
+	private String fileName =  "";
+	private Thread thread;
+	private DataOutputStream d = null; 
+	
+	public Server(String name, String fname, DataOutputStream link)
+	{
+		threadName = name;
+		fileName = fname;
+		d = link;
+	}
+	
+	public void run()
+	{
+		
+		String message = "";
+		FileReader in = null;
+		try
+		{
+			in = new FileReader(fileName + ".txt");
+			
+			System.out.println(fileName);
+
+			int d = in.read();
+			
+			
+			while(d!= -1)
+			{
+				message += (char)d;
+				d = in.read();
+				
+				System.out.println(threadName +"..........."+ message);
+				
+				thread.sleep(500);
+			}
+			
+			
+		}
+
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
+	}
+
+	public void start()
+	{
+		System.out.println("Start thread ........" + threadName);
+		if(thread == null)
+		{
+			thread = new Thread(this,threadName);
+			thread.start();
+		}
+	}
+		
+}
+
+public class ServerThread
+{
+	public static void main(String args[]) throws IOException
+	{
+		ServerSocket socket = new ServerSocket(6666);
+		
+		 Socket se = socket.accept();
+		 
+		 DataInputStream din = new DataInputStream(se.getInputStream());
+		 DataOutputStream dout = new DataOutputStream(se.getOutputStream());
+		 
+		 
+		 String data = din.readUTF();
+		 
+		 Server s1 = new Server("",data,dout);
+		 s1.start();
+		 
+		 
+		
+		
+	}
+}

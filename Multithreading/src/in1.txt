@@ -1,0 +1,88 @@
+A mathematical model is a description of a system using mathematical concepts and language. The process of developing a mathematical model is termed mathematical modeling. Mathematical models are used in the natural sciences (such as physics, biology, Earth science, meteorology) and engineering disciplines (such as computer science, artificial intelligence), as well as in the social sciences (such as economics, psychology, sociology, political science). Physicists, engineers, statisticians, operations research analysts, and economists use mathematical models most extensively[citation needed]. A model may help to explain a system and to study the effects of different components, and to make predictions about behaviour.
+
+Contents  [hide] 
+1	Elements of a mathematical model
+2	Classifications
+3	Significance in the natural sciences
+4	Some applications
+5	Building blocks
+6	A priori information
+6.1	Subjective information
+7	Complexity
+8	Training
+9	Model evaluation
+9.1	Fit to empirical data
+9.2	Scope of the model
+9.3	Philosophical considerations
+10	Examples
+11	See also
+12	References
+13	Further reading
+13.1	Books
+13.2	Specific applications
+14	External links
+Elements of a mathematical model[edit]
+Mathematical models can take many forms, including dynamical systems, statistical models, differential equations, or game theoretic models. These and other types of models can overlap, with a given model involving a variety of abstract structures. In general, mathematical models may include logical models. In many cases, the quality of a scientific field depends on how well the mathematical models developed on the theoretical side agree with results of repeatable experiments. Lack of agreement between theoretical mathematical models and experimental measurements often leads to important advances as better theories are developed.
+
+In the physical sciences, the traditional mathematical model contains four major elements. These are
+
+Governing equations
+Defining equations
+Constitutive equations
+Constraints
+Classifications[edit]
+Mathematical models are usually composed of relationships and variables. Relationships can be described by operators, such as algebraic operators, functions, differential operators, etc. Variables are abstractions of system parameters of interest, that can be quantified. Several classification criteria can be used for mathematical models according to their structure:
+
+Linear vs. nonlinear: If all the operators in a mathematical model exhibit linearity, the resulting mathematical model is defined as linear. A model is considered to be nonlinear otherwise. The definition of linearity and nonlinearity is dependent on context, and linear models may have nonlinear expressions in them. For example, in a statistical linear model, it is assumed that a relationship is linear in the parameters, but it may be nonlinear in the predictor variables. Similarly, a differential equation is said to be linear if it can be written with linear differential operators, but it can still have nonlinear expressions in it. In a mathematical programming model, if the objective functions and constraints are represented entirely by linear equations, then the model is regarded as a linear model. If one or more of the objective functions or constraints are represented with a nonlinear equation, then the model is known as a nonlinear model.
+Nonlinearity, even in fairly simple systems, is often associated with phenomena such as chaos and irreversibility. Although there are exceptions, nonlinear systems and models tend to be more difficult to study than linear ones. A common approach to nonlinear problems is linearization, but this can be problematic if one is trying to study aspects such as irreversibility, which are strongly tied to nonlinearity.
+Static vs. dynamic: A dynamic model accounts for time-dependent changes in the state of the system, while a static (or steady-state) model calculates the system in equilibrium, and thus is time-invariant. Dynamic models typically are represented by differential equations or difference equations.
+Explicit vs. implicit: If all of the input parameters of the overall model are known, and the output parameters can be calculated by a finite series of computations, the model is said to be explicit. But sometimes it is the output parameters which are known, and the corresponding inputs must be solved for by an iterative procedure, such as Newton's method (if the model is linear) or Broyden's method (if non-linear). In such a case the model is said to be implicit. For example, a jet engine's physical properties such as turbine and nozzle throat areas can be explicitly calculated given a design thermodynamic cycle (air and fuel flow rates, pressures, and temperatures) at a specific flight condition and power setting, but the engine's operating cycles at other flight conditions and power settings cannot be explicitly calculated from the constant physical properties.
+Discrete vs. continuous: A discrete model treats objects as discrete, such as the particles in a molecular model or the states in a statistical model; while a continuous model represents the objects in a continuous manner, such as the velocity field of fluid in pipe flows, temperatures and stresses in a solid, and electric field that applies continuously over the entire model due to a point charge.
+Deterministic vs. probabilistic (stochastic): A deterministic model is one in which every set of variable states is uniquely determined by parameters in the model and by sets of previous states of these variables; therefore, a deterministic model always performs the same way for a given set of initial conditions. Conversely, in a stochastic model—usually called a "statistical model"—randomness is present, and variable states are not described by unique values, but rather by probability distributions.
+Deductive, inductive, or floating: A deductive model is a logical structure based on a theory. An inductive model arises from empirical findings and generalization from them. The floating model rests on neither theory nor observation, but is merely the invocation of expected structure. Application of mathematics in social sciences outside of economics has been criticized for unfounded models.[1] Application of catastrophe theory in science has been characterized as a floating model.[2]
+Significance in the natural sciences[edit]
+Mathematical models are of great importance in the natural sciences, particularly in physics. Physical theories are almost invariably expressed using mathematical models.
+
+Throughout history, more and more accurate mathematical models have been developed. Newton's laws accurately describe many everyday phenomena, but at certain limits relativity theory and quantum mechanics must be used; even these do not apply to all situations and need further refinement. It is possible to obtain the less accurate models in appropriate limits, for example relativistic mechanics reduces to Newtonian mechanics at speeds much less than the speed of light. Quantum mechanics reduces to classical physics when the quantum numbers are high. For example, the de Broglie wavelength of a tennis ball is insignificantly small, so classical physics is a good approximation to use in this case.
+
+It is common to use idealized models in physics to simplify things. Massless ropes, point particles, ideal gases and the particle in a box are among the many simplified models used in physics. The laws of physics are represented with simple equations such as Newton's laws, Maxwell's equations and the Schrödinger equation. These laws are such as a basis for making mathematical models of real situations. Many real situations are very complex and thus modeled approximate on a computer, a model that is computationally feasible to compute is made from the basic laws or from approximate models made from the basic laws. For example, molecules can be modeled by molecular orbital models that are approximate solutions to the Schrödinger equation. In engineering, physics models are often made by mathematical methods such as finite element analysis.
+
+Different mathematical models use different geometries that are not necessarily accurate descriptions of the geometry of the universe. Euclidean geometry is much used in classical physics, while special relativity and general relativity are examples of theories that use geometries which are not Euclidean.
+
+Some applications[edit]
+Since prehistorical times simple models such as maps and diagrams have been used.
+
+Often when engineers analyze a system to be controlled or optimized, they use a mathematical model. In analysis, engineers can build a descriptive model of the system as a hypothesis of how the system could work, or try to estimate how an unforeseeable event could affect the system. Similarly, in control of a system, engineers can try out different control approaches in simulations.
+
+A mathematical model usually describes a system by a set of variables and a set of equations that establish relationships between the variables. Variables may be of many types; real or integer numbers, boolean values or strings, for example. The variables represent some properties of the system, for example, measured system outputs often in the form of signals, timing data, counters, and event occurrence (yes/no). The actual model is the set of functions that describe the relations between the different variables.
+
+Building blocks[edit]
+In business and engineering, mathematical models may be used to maximize a certain output. The system under consideration will require certain inputs. The system relating inputs to outputs depends on other variables too: decision variables, state variables, exogenous variables, and random variables.
+
+Decision variables are sometimes known as independent variables. Exogenous variables are sometimes known as parameters or constants. The variables are not independent of each other as the state variables are dependent on the decision, input, random, and exogenous variables. Furthermore, the output variables are dependent on the state of the system (represented by the state variables).
+
+Objectives and constraints of the system and its users can be represented as functions of the output variables or state variables. The objective functions will depend on the perspective of the model's user. Depending on the context, an objective function is also known as an index of performance, as it is some measure of interest to the user. Although there is no limit to the number of objective functions and constraints a model can have, using or optimizing the model becomes more involved (computationally) as the number increases.
+
+For example, economists often apply linear algebra when using input-output models. Complicated mathematical models that have many variables may be consolidated by use of vectors where one symbol represents several variables.
+
+A priori information[edit]
+
+To analyse something with a typical "black box approach", only the behavior of the stimulus/response will be accounted for, to infer the (unknown) box. The usual representation of this black box system is a data flow diagram centered in the box.
+Mathematical modeling problems are often classified into black box or white box models, according to how much a priori information on the system is available. A black-box model is a system of which there is no a priori information available. A white-box model (also called glass box or clear box) is a system where all necessary information is available. Practically all systems are somewhere between the black-box and white-box models, so this concept is useful only as an intuitive guide for deciding which approach to take.
+
+Usually it is preferable to use as much a priori information as possible to make the model more accurate. Therefore, the white-box models are usually considered easier, because if you have used the information correctly, then the model will behave correctly. Often the a priori information comes in forms of knowing the type of functions relating different variables. For example, if we make a model of how a medicine works in a human system, we know that usually the amount of medicine in the blood is an exponentially decaying function. But we are still left with several unknown parameters; how rapidly does the medicine amount decay, and what is the initial amount of medicine in blood? This example is therefore not a completely white-box model. These parameters have to be estimated through some means before one can use the model.
+
+In black-box models one tries to estimate both the functional form of relations between variables and the numerical parameters in those functions. Using a priori information we could end up, for example, with a set of functions that probably could describe the system adequately. If there is no a priori information we would try to use functions as general as possible to cover all different models. An often used approach for black-box models are neural networks which usually do not make assumptions about incoming data. Alternatively the NARMAX (Nonlinear AutoRegressive Moving Average model with eXogenous inputs) algorithms which were developed as part of nonlinear system identification [3] can be used to select the model terms, determine the model structure, and estimate the unknown parameters in the presence of correlated and nonlinear noise. The advantage of NARMAX models compared to neural networks is that NARMAX produces models that can be written down and related to the underlying process, whereas neural networks produce an approximation that is opaque.
+
+Subjective information[edit]
+Sometimes it is useful to incorporate subjective information into a mathematical model. This can be done based on intuition, experience, or expert opinion, or based on convenience of mathematical form. Bayesian statistics provides a theoretical framework for incorporating such subjectivity into a rigorous analysis: we specify a prior probability distribution (which can be subjective), and then update this distribution based on empirical data.
+
+An example of when such approach would be necessary is a situation in which an experimenter bends a coin slightly and tosses it once, recording whether it comes up heads, and is then given the task of predicting the probability that the next flip comes up heads. After bending the coin, the true probability that the coin will come up heads is unknown; so the experimenter would need to make a decision (perhaps by looking at the shape of the coin) about what prior distribution to use. Incorporation of such subjective information might be important to get an accurate estimate of the probability.
+
+Complexity[edit]
+In general, model complexity involves a trade-off between simplicity and accuracy of the model. Occam's razor is a principle particularly relevant to modeling, its essential idea being that among models with roughly equal predictive power, the simplest one is the most desirable. While added complexity usually improves the realism of a model, it can make the model difficult to understand and analyze, and can also pose computational problems, including numerical instability. Thomas Kuhn argues that as science progresses, explanations tend to become more complex before a paradigm shift offers radical simplification.
+
+For example, when modeling the flight of an aircraft, we could embed each mechanical part of the aircraft into our model and would thus acquire an almost white-box model of the system. However, the computational cost of adding such a huge amount of detail would effectively inhibit the usage of such a model. Additionally, the uncertainty would increase due to an overly complex system, because each separate part induces some amount of variance into the model. It is therefore usually appropriate to make some approximations to reduce the model to a sensible size. Engineers often can accept some approximations in order to get a more robust and simple model. For example, Newton's classical mechanics is an approximated model of the real world. Still, Newton's model is quite sufficient for most ordinary-life situations, that is, as long as particle speeds are well below the speed of light, and we study macro-particles only.
+
+Training[edit]
+Any model which is not pure white-box contains some parameters that can be used to fit the model to the system it is intended to describe. If the modeling is done by a neural network or other machine learning, the optimization of parameters is called training, while the optimization of model hyperparameters is called tuning and often uses cross-validation. In more conventional modeling through explicitly given mathematical functions, parameters are often determined by curve fitting.

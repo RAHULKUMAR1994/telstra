@@ -1,0 +1,14 @@
+import java.io.*;  
+2.import java.net.*;  
+3.public class MyServer {  
+4.public static void main(String[] args){  
+5.try{  
+6.ServerSocket ss=new ServerSocket(6666);  
+7.Socket s=ss.accept();//establishes connection   
+8.DataInputStream dis=new DataInputStream(s.getInputStream());  
+9.String  str=(String)dis.readUTF();  
+10.System.out.println("message= "+str);  
+11.ss.close();  
+12.}catch(Exception e){System.out.println(e);}  
+13.}  
+14.}  

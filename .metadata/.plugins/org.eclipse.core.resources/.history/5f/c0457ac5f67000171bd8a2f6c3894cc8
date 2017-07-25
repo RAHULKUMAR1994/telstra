@@ -1,0 +1,92 @@
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.LinkedList;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
+class square
+{
+	private int n = 0;
+	
+	public square(int n)
+	{
+		this.n = n * n;
+	}
+	
+	public int getN()
+	{
+		return this.n;
+	}
+}
+
+
+public class dictionary {
+
+	public static <E> void main(String arfs[])
+	{
+		
+		 Dictionary<Integer, Integer> dict = new Hashtable<Integer, Integer>();
+		 
+		 LinkedList<String> lin = new LinkedList<String>();
+		 ArrayList<E> arr = new ArrayList<E>();
+		 
+		 square sq = new square(3); 
+		 
+		 arr.add((E) sq);
+		 
+		 
+		 
+		 ArrayList lis =  new ArrayList();
+		 
+		 lis.add("array2 list");
+		 
+		 lis.add(2);
+		 
+		 System.out.println(lis.get(1));
+		 
+		 HashSet hash  = new HashSet();
+		 
+		 hash.add("hello");
+		 hash.add("hello");
+		 
+		 System.out.println(hash.toString());
+		 
+		 
+		 
+		 
+		 
+		 lin.add("hello");
+		 lin.add("world");
+		 lin.add("hi");
+		 lin.add("bro");
+		 
+		int si = lin.size()	;	 
+		 while(si > 0)
+		 {
+			 System.out.println(lin.get(--si));
+		 }
+		 
+		 dict.put(1,1);
+		 dict.put(2,3);
+		 
+		 Enumeration<Integer> enum1 =  dict.keys();
+		
+		 int size = dict.size();
+		 
+		// System.out.println(dict.get(enum1.nextElement()));
+		 
+		 
+		 
+		 while(size-- > 0)
+		 {
+			 System.out.println(dict.get(enum1.nextElement()));
+		 }
+		 
+		
+	}
+	
+}

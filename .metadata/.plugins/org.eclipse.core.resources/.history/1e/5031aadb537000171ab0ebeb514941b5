@@ -1,0 +1,33 @@
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Hashtable;
+
+
+public class dictionary {
+
+	public static void main(String arfs[])
+	{
+		
+		 Dictionary<String, String> dict = new Hashtable<String, String>();
+		 
+		 dict.put("hello", "world");
+		 dict.put("no", "arg1");
+		 
+		 Enumeration<String> enum1 =  dict.keys();
+		
+		 int size = dict.size();
+		 
+		// System.out.println(dict.get(enum1.nextElement()));
+		 
+		 
+		 
+		 while(size-- > 0)
+		 {
+			 System.out.println(dict.get(enum1.nextElement()));
+		 }
+		 
+		
+	}
+	
+}

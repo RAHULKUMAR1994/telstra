@@ -1,0 +1,15 @@
+
+public class ExeServer implements Runnable {
+
+	private String client = "";
+	public ExeServer(String cli)
+	{
+		client = cli;
+	}
+		
+	
+	public void run()
+	{
+		
+	}
+}

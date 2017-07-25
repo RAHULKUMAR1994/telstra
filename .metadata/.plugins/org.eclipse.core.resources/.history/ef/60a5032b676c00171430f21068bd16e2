@@ -1,0 +1,79 @@
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.Set;
+import java.util.Iterator;
+
+
+
+
+public class niononblockingserver {
+
+	public static void main(String args[]) throws IOException
+	{
+		ServerSocketChannel channel = ServerSocketChannel.open(); 
+		Selector se = Selector.open();
+
+
+		InetSocketAddress address = new InetSocketAddress("localhost",2324);
+
+		channel.bind(address) ;
+		channel.configureBlocking(false);
+
+
+		int keys = channel.validOps();
+
+		SelectionKey avaKeys = channel.register(se, keys);
+
+		while(true)
+		{
+			se.select();
+
+			Set<SelectionKey> set = se.selectedKeys();
+
+			Iterator<SelectionKey> iter = set.iterator();
+
+			while(iter.hasNext())
+			{
+				SelectionKey sele = iter.next();
+
+				if(sele.isAcceptable())
+				{
+					SocketChannel seCli = channel.accept();
+
+
+					seCli.configureBlocking(false);
+					seCli.register(se, SelectionKey.OP_READ);
+					System.out.println("the connection is established");
+				}
+				else if(sele.isReadable())
+				{
+					SocketChannel chan = (SocketChannel) sele.channel();
+
+					ByteBuffer buffer =  ByteBuffer.allocate(48);
+
+					chan.read(buffer);
+
+					buffer.flip();
+
+					String result = new String(buffer.array());
+
+					System.out.println("the data read is " + result);
+					
+					chan.close();
+
+				}
+
+			}
+			iter.remove();
+
+		}
+	
+
+	}
+
+}

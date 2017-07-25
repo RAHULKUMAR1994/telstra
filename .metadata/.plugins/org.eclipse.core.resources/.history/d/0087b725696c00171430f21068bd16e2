@@ -1,0 +1,48 @@
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.util.Scanner;
+
+
+public class niononblockclient {
+	
+	public static void main(String a[]) throws IOException
+	{
+		InetSocketAddress add = new InetSocketAddress("localhost",1919);
+		SocketChannel chan = SocketChannel.open(add);
+		
+		
+		String s= "hi";
+		
+
+			byte array[]=  new String(s).getBytes();
+			
+			ByteBuffer buffer = ByteBuffer.wrap(array);
+			chan.write(buffer);
+			
+			buffer.clear();
+			
+			InetSocketAddress add1 = new InetSocketAddress("localhost",1919);
+			SocketChannel chan1 = SocketChannel.open(add);
+			
+			
+			String s1= "hello";
+			
+
+				byte array1[]=  new String(s1).getBytes();
+				
+				ByteBuffer buffer1 = ByteBuffer.wrap(array1);
+				chan.write(buffer1);
+				
+				buffer1.clear();
+			
+		}
+		
+		
+		
+	
+	
+	
+	
+}

@@ -1,0 +1,19 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class NioJavaTest
+{
+	@Test
+	public void test1() {
+		
+		
+		NioJava hw = new NioJava();
+		
+		System.out.println(hw.getMessage());
+		
+		assertEquals("Hello world", hw.getMessage());
+		
+	
+	}
+}
