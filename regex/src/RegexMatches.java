@@ -7,7 +7,7 @@ public class RegexMatches {
 	   
 	   
       String line = "This order was placed for QT3000! OK?";
-      String pattern = "[A-Za-z]*";
+      String pattern = "[A-Za-z_]*";
 
       // Create a Pattern object
       Pattern r = Pattern.compile(pattern);
